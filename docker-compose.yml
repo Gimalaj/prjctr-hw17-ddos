@@ -1,0 +1,10 @@
+version: '3.6'
+  nginx:
+    platform: linux/x86_64
+    image: nginx:alpine
+    restart: always
+    volumes:
+      - "./nginx/conf/default.conf:/etc/nginx/conf.d/default.conf"
+      - "./nginx/html/index.html:/var/www/html/index.html"
+    ports:
+      - '8080:80'
